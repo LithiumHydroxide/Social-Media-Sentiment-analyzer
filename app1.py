@@ -21,7 +21,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS
+# Custom CSS with improved text visibility
 st.markdown("""
 <style>
     .main-header {
@@ -31,15 +31,74 @@ st.markdown("""
         margin-bottom: 2rem;
     }
     .metric-card {
-        background: white;
-        padding: 1rem;
+        background: #f8f9fa;
+        color: #2c3e50;
+        padding: 1.5rem;
         border-radius: 8px;
         border-left: 4px solid #667eea;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        margin-bottom: 1rem;
     }
-    .alert-high { border-left-color: #ff4444; }
-    .alert-medium { border-left-color: #ffaa00; }
-    .alert-low { border-left-color: #00aa44; }
+    .metric-card h4 {
+        color: #2c3e50;
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+    .metric-card ul {
+        color: #34495e;
+        margin: 0;
+        padding-left: 1.2rem;
+    }
+    .metric-card li {
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+    }
+    .alert-high { 
+        border-left-color: #e74c3c;
+        background: #fdf2f2;
+    }
+    .alert-high h4 {
+        color: #c0392b;
+    }
+    .alert-medium { 
+        border-left-color: #f39c12;
+        background: #fef9e7;
+    }
+    .alert-medium h4 {
+        color: #d68910;
+    }
+    .alert-low { 
+        border-left-color: #27ae60;
+        background: #eafaf1;
+    }
+    .alert-low h4 {
+        color: #229954;
+    }
+    /* Dark theme adjustments */
+    @media (prefers-color-scheme: dark) {
+        .metric-card {
+            background: #2c3e50;
+            color: #ecf0f1;
+        }
+        .metric-card h4 {
+            color: #ecf0f1;
+        }
+        .metric-card ul {
+            color: #bdc3c7;
+        }
+        .alert-high {
+            background: #4a2c2a;
+            color: #ecf0f1;
+        }
+        .alert-medium {
+            background: #4a3c2a;
+            color: #ecf0f1;
+        }
+        .alert-low {
+            background: #2a4a35;
+            color: #ecf0f1;
+        }
+    }
 </style>
 """, unsafe_allow_html=True)
 
